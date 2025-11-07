@@ -26,7 +26,9 @@ export function ServerCard({ server }: ServerCardProps) {
           <CheckCircle className="h-3 w-3" />
           <span>{server.status}</span>
         </div>
-        <p className="text-sm text-muted-foreground">{server.description}</p>
+        {server.description && (
+          <p className="text-sm text-muted-foreground">{server.description}</p>
+        )}
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
           <Wrench className="h-4 w-4" />
           <span>{server.tools_count} tools available</span>
